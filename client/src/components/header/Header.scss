@@ -1,0 +1,10 @@
+//Modules
+@use '../../Sass/mixins.scss' as mainSassFile;
+
+header{
+    @include mainSassFile.AppComponent("header", rgb(47 97 170), #fff);
+}
+
+// .myClass{
+//     background-color: rgb(100, 61, 61);
+// }
