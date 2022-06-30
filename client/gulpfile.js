@@ -10,9 +10,9 @@ const sass= gulpSass(require('sass'));
 
 
 
-gulp.task('sass', ()=>{
-    gulp.watch('', async()=>{
-        gulp.src('src/Sass.scss').pipe(sass()).pipe(gulp.dest('src'));
+gulp.task('sass', async ()=>{
+    gulp.watch('src/components/**/*.scss', async()=>{
+        gulp.src('src/components/**/*.scss').pipe(sass()).pipe(gulp.dest('src/css'));
     });
 });
 // gulp.task('log', async ()=>{
