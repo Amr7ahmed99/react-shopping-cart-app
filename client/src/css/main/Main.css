@@ -1,0 +1,12 @@
+main {
+  grid-area: "main";
+  padding: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(170, 53, 47);
+  border-bottom: 1px solid #000;
+  color: #000;
+}

@@ -11,8 +11,8 @@ const sass= gulpSass(require('sass'));
 
 
 gulp.task('sass', async ()=>{
-    gulp.watch('src/components/**/*.scss', async()=>{
-        gulp.src('src/components/**/*.scss').pipe(sass()).pipe(gulp.dest('src/css'));
+    gulp.watch('src/components/Local/**/*.scss', async()=>{
+        gulp.src('src/components/Local/**/*.scss').pipe(sass()).pipe(gulp.dest('src/css'));
     });
 });
 // gulp.task('log', async ()=>{
