@@ -1,0 +1,5 @@
+@use '../../../Sass/mixins.scss' as mainSassFile;
+
+footer{
+    @include mainSassFile.AppComponent('footer', rgb(47 97 170), #fff)
+}
