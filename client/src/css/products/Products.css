@@ -40,3 +40,21 @@
   width: 25%;
   background-color: rgb(7, 52, 83);
 }
+
+.close-Icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.product-Modal img {
+  display: block;
+  width: 40%;
+  margin: 20px auto;
+}
+.product-Modal .product-desc p {
+  font-size: 18px;
+  color: rgb(47, 97, 170);
+  text-align: center;
+}
