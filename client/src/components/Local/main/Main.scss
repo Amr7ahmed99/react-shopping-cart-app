@@ -1,6 +1,6 @@
 @use '../../../Sass/mixins.scss' as mainSassFile;
 
 main{
-    @include mainSassFile.AppComponent('main', rgb(170, 53, 47), #000);
+    @include mainSassFile.AppComponent('main', rgb(255,255,255), #000);
 }
 
