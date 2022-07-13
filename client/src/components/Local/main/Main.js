@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../../css/main/Main.css';
 import { words } from '../../../words';
+import data from '../../../data.json';
+import Products from '../products/Products';
 export default function Main() {
+  const [products, setProducts]= useState(data);
   return (
     <main>
-        {words.contentTitle}
+      <Products products= {products}/>
     </main>
   )
 }
