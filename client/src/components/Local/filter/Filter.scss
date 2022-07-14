@@ -1,0 +1,41 @@
+
+%filter-list-share{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    span{
+        text-align: left;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    select{
+        padding: 10px;
+        outline-color: #000;
+        border-radius: 5px;
+    }
+}
+
+.filter-wrapper{
+    width: 25%;
+    border: 1px solid rgb(209, 203, 203);
+    height: auto;
+    .filter-title{
+        color: #fff;
+        text-align: left;
+        background-color: rgb(47, 97, 170);
+        margin-top: 0;
+    }
+    .product-number{
+        font-size: 15px;
+        text-align: left;
+        padding: 10px 20px;
+    }
+    .filter-rate{
+        @extend %filter-list-share;
+    }
+
+    .filter-order{
+        @extend %filter-list-share;
+    }
+}

@@ -2,5 +2,7 @@
 
 main{
     @include mainSassFile.AppComponent('main', rgb(255,255,255), #000);
+    display: flex;
+    flex-direction: row;
 }
 
