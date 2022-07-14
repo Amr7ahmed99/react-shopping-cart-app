@@ -1,0 +1,32 @@
+.filter-wrapper .filter-order, .filter-wrapper .filter-rate {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+.filter-wrapper .filter-order span, .filter-wrapper .filter-rate span {
+  text-align: left;
+  font-size: 18px;
+  font-weight: normal;
+}
+.filter-wrapper .filter-order select, .filter-wrapper .filter-rate select {
+  padding: 10px;
+  outline-color: #000;
+  border-radius: 5px;
+}
+
+.filter-wrapper {
+  width: 25%;
+  border: 1px solid rgb(209, 203, 203);
+  height: auto;
+}
+.filter-wrapper .filter-title {
+  color: #fff;
+  text-align: left;
+  background-color: rgb(47, 97, 170);
+  margin-top: 0;
+}
+.filter-wrapper .product-number {
+  font-size: 15px;
+  text-align: left;
+  padding: 10px 20px;
+}
