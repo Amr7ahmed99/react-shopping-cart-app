@@ -4,7 +4,7 @@ import ProductModal from './ProductModal';
 
 
 
-export default function Products({products, productModal, openModal, closeModal}) {
+export default function Products({products, productModal, openModal, closeModal, addToCart}) {
     return(
         <>
             <div className='products-wrapper'>
@@ -21,7 +21,7 @@ export default function Products({products, productModal, openModal, closeModal}
                                 </div>
                                 <p> rating: {product.rating.rate}</p>
 
-                                <button className='AddToCart' type='button' role= "button"> Add To Cart</button>
+                                <button className='AddToCart' onClick= {()=> addToCart(product)} type='button' role= "button"> Add To Cart</button>
                             </div>
                             
                         );
