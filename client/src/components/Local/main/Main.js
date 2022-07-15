@@ -5,19 +5,24 @@ import Products from '../products/Products';
 import Filter from '../filter/Filter';
 import axios from 'axios';
 import axiosInstance from '../../Global/axiosConfig/axiosConfig';
+import Cart from '../cart/Cart';
 // import data from '../../../data.json';
 export default function Main() {
   const [productModal, setProductModal]= useState("");
   const [products, setProducts]= useState([]);
   const [category, setCategory]= useState("/"); // means get ALL product
   const [rate, setRate]= useState(""); // means get ALL product
-
+  const [cartItems, setCartItems]= useState( JSON.parse(localStorage.getItem("cartItems"))  || []);
   useEffect(()=>{
     axiosInstance
     .get(`${category}`)
     .then( (res)=> setProducts(res.data))
     .catch((err)=> Promise.reject(err));
   }, [category]);
+
+  useEffect(()=>{
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
   const openModal= (product)=>{
       setProductModal(product);
   }
@@ -39,10 +44,36 @@ export default function Main() {
       );
     setProducts(newSort);
   }
+
+  const addToCart= (newItem)=>{
+    const cartItemsClone= [...cartItems];
+    var isExist= false;
+    cartItemsClone.forEach( item=> {
+      if(newItem.id === item.id){
+        item.quantity++;
+        isExist= true;
+      }
+    });
+
+    if(!isExist){
+      cartItemsClone.push({...newItem, quantity: 1});
+    }
+    setCartItems(cartItemsClone);
+  }
+
+  const removeFromCart= (itemId)=>{
+    const cartItemsClone= [...cartItems];
+    setCartItems(cartItemsClone.filter( item=> (item.id !== itemId)));
+  }
   return (
     <main>
-      <Filter  category= {category} rate= {rate} changeCategory= {changeCategory} sortingByRate= {sortingByRate}/>
-      <Products products= {products} productModal= {productModal} openModal= {openModal} closeModal= {closeModal}/>
-      </main>
+      <div className='row-products-filter'>
+        <Filter numOfProducts= {products.length} category= {category} rate= {rate} changeCategory= {changeCategory} sortingByRate= {sortingByRate}/>
+        <Products products= {products} productModal= {productModal} openModal= {openModal} closeModal= {closeModal} addToCart= {addToCart}/>
+      </div>
+      <div className='row-cart'>
+        <Cart cartItems= {cartItems} removeFromCart= {removeFromCart}/>
+      </div>
+    </main>
   )
 }

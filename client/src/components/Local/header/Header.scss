@@ -3,6 +3,7 @@
 
 header{
     @include mainSassFile.AppComponent("header", rgb(47 97 170), #fff);
+    text-align: center;
 }
 
 // .myClass{

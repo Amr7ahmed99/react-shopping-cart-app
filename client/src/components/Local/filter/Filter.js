@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import '../../../css/filter/Filter.css';
-export default function Filter({category, rate, changeCategory, sortingByRate}) {
-    const numOfPro= 4;
+export default function Filter({numOfProducts, category, rate, changeCategory, sortingByRate}) {
     
   return (
     <div className='filter-wrapper'>
         <p className='filter-title'> Filter</p>
-        <p className='product-number'> Number of products {numOfPro}</p>
+        <p className='product-number'> Number of products {numOfProducts} Product</p>
         <div className='filter-rate' >
             <span> Rate</span>
             <select value= {rate} onChange={(ev)=> sortingByRate(ev)}>
