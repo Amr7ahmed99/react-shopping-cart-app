@@ -1,3 +1,13 @@
+.cart-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.cart-wrapper .cart-title p {
+  border-bottom: 1px solid #000;
+  font-size: 22px;
+  padding: 10px 0 10px 0;
+}
 .cart-wrapper .cart-items .cart-item {
   display: flex;
   flex-direction: row;
@@ -35,4 +45,35 @@
   padding: 5px;
   margin: 5px 10px;
   font-size: 15px;
+}
+.cart-wrapper .cart-checkout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-wrapper .cart-checkout .total-price {
+  font-weight: normal;
+}
+.cart-wrapper .cart-checkout .go-checkout {
+  padding: 10px;
+  border-radius: 2px;
+  background-color: rgb(47, 97, 170);
+  color: #fff;
+  border: 1px solid #fff;
+  outline: none;
+  cursor: pointer;
+}
+.cart-wrapper .checkout-form {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgb(232, 227, 227);
+}
+.cart-wrapper .checkout-form .close-checkout {
+  position: absolute;
+  right: 0;
+  margin: 0 10px;
+  cursor: pointer;
 }

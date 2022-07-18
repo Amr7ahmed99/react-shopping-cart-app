@@ -1,5 +1,15 @@
 $danger-color: #dc3545;
 .cart-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    .cart-title{
+        p{
+            border-bottom: 1px solid #000;
+            font-size: 22px;
+            padding:10px 0 10px 0;
+        }
+    }
     .cart-items .cart-item{
         display: flex;
         flex-direction: row;
@@ -39,5 +49,36 @@ $danger-color: #dc3545;
             }
         }
     }
-   
+   .cart-checkout{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .total-price{
+            font-weight: normal;
+        }
+        .go-checkout{
+            padding: 10px;
+            border-radius: 2px;
+            background-color: rgb(47, 97, 170);
+            color: #fff;
+            border: 1px solid #fff;
+            outline: none;
+            cursor: pointer;
+        }
+   }
+
+   .checkout-form{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgb(232, 227, 227);
+    .close-checkout{
+        position: absolute;
+        right: 0;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+   }
 }

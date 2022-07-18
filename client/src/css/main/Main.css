@@ -17,5 +17,6 @@ main .row-products-filter {
   flex-direction: row;
 }
 main .row-cart {
-  width: 80%;
+  display: flex;
+  justify-content: center;
 }
