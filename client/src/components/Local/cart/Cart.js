@@ -16,7 +16,6 @@ export default function Cart({cartItems, removeFromCart}) {
       name: values.name,
       email: values.email
     }
-    // console.log(order);
   }
   return (
     <section className='cart-wrapper'>
