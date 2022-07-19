@@ -6,15 +6,14 @@ import Bounce from 'react-reveal/Bounce';
 
 export default function Products({products, productModal, openModal, closeModal, addToCart}) {
     return(
-        <>
+        <Bounce bottom cascade>
             <div className='products-wrapper'>
                 {
                     products
                         &&
                     products.map(product => {
                         return (
-                            <Bounce bottom cascade key= {product.id}>
-                                <div  className= "product-item">
+                                <div  key= {product.id} className= "product-item">
                                     <img src= {product.image} alt= {product.title} onClick= {()=> openModal(product)}/>
                                     <div className='product-desc'>
                                         <p> {product.title}</p>
@@ -24,7 +23,6 @@ export default function Products({products, productModal, openModal, closeModal,
 
                                     <button className='AddToCart' onClick= {()=> addToCart(product)} type='button' role= "button"> Add To Cart</button>
                                 </div>
-                            </Bounce>
 
                             
                         );
@@ -34,6 +32,6 @@ export default function Products({products, productModal, openModal, closeModal,
                 
             </div>
             <ProductModal productInfo= {productModal} closeModal= {closeModal}/>
-        </>
+        </Bounce>
     );
 }
