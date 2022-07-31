@@ -16,7 +16,7 @@ export default function Main() {
   useEffect(()=>{
     axiosInstance
     .get(`${category}`)
-    .then( (res)=> setProducts(res.data))
+    .then( (res)=> { setProducts(res.data)})
     .catch((err)=> Promise.reject(err));
   }, [category]);
 
