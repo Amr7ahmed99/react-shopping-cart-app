@@ -11,6 +11,11 @@ mongoose.connect('mongodb://localhost/react-shopping-cart',{useNewUrlParser: tru
 .catch( err=> console.log("can not connect to mongoDB"));
 
 
+
+app.listen(27017, ()=>{
+    console.log("Server Is Running Now")
+});//Listen on port 27017
+
 // const express= require('express');
 // const mongoose= require('mongoose');
 // const bodyParser= require('body-parser');
@@ -18,9 +23,9 @@ mongoose.connect('mongodb://localhost/react-shopping-cart',{useNewUrlParser: tru
 
 // app.use( bodyParser.json() )//Middleware to parse each response into json
 
-// mongoose.connect( "mongodb://localhost/react-shopping-cart", {useNewUrlParser: true, useUnifiedTopology:  true})
-// .then( res=> console.log("successfully connected"))
-// .catch( err => console.log("can not connect to mongoDB"));
+// mongoose.connect('mongodb://localhost/react-shopping-cart',{useNewUrlParser: true, useUnifiedTopology:  true})
+// .then( res=> console.log("successfully connected on DB"))
+// .catch( err=> console.log("can not connect to mongoDB"));
 
 // const Products= mongoose.model("product", new mongoose.Schema({
 //         category: String,
@@ -51,6 +56,6 @@ mongoose.connect('mongodb://localhost/react-shopping-cart',{useNewUrlParser: tru
 // });
 
 
-// app.listen(3005, ()=>{
+// app.listen(27017, ()=>{
 //     console.log("Server Is Running Now")
 // });//Listen on port 3005

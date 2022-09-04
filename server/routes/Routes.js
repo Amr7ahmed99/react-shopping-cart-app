@@ -3,6 +3,7 @@ const router= express.Router();
 const Product=  require('../model/ProductModel');
 
 
+
 router.get('/api/products', async (req, res)=>{
     const products= await Product.find();// (Send Get All Products Req To Server)
     res.send(products);// (Send All Products JSON To Clinet)

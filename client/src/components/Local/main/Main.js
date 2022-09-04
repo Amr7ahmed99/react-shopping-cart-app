@@ -6,18 +6,26 @@ import Filter from '../filter/Filter';
 import axios from 'axios';
 import axiosInstance from '../../Global/axiosConfig/axiosConfig';
 import Cart from '../cart/Cart';
+import { useDispatch, useSelector } from 'react-redux';
+import changeProducts from '../../../store/action';
 // import data from '../../../data.json';
+
 export default function Main() {
   const [productModal, setProductModal]= useState("");
-  const [products, setProducts]= useState([]);
+  // const [products, setProducts]= useState([]);
   const [category, setCategory]= useState("/"); // means get ALL product
   const [rate, setRate]= useState(""); // means get ALL product
   const [cartItems, setCartItems]= useState( JSON.parse(localStorage.getItem("cartItems"))  || []);
+  
+  const dispatch= useDispatch();
+  const products= useSelector( (state)=> state.products);
   useEffect(()=>{
-    axiosInstance
-    .get(`${category}`)
-    .then( (res)=> { console.log(res.data)})
-    .catch((err)=> Promise.reject(err));
+    dispatch(changeProducts(category));
+    // axiosInstance
+    // .get(`${category}`)
+    // .then( (res)=> { setProducts(res.data)})
+    // .catch((err)=> Promise.reject(err));
+    
   }, [category]);
 
   useEffect(()=>{
@@ -37,12 +45,12 @@ export default function Main() {
   }
 
   const sortingByRate= (ev)=>{
-    const newSort= [...products];
-    setRate(ev.target.value);
-    newSort.sort( 
-      (a,b)=> ev.target.value == "Low"? a.rating.rate - b.rating.rate: b.rating.rate - a.rating.rate
-      );
-    setProducts(newSort);
+    // const newSort= [...products];
+    // setRate(ev.target.value);
+    // newSort.sort( 
+    //   (a,b)=> ev.target.value == "Low"? a.rating.rate - b.rating.rate: b.rating.rate - a.rating.rate
+    //   );
+    // setProducts(newSort);
   }
 
   const addToCart= (newItem)=>{
@@ -68,7 +76,7 @@ export default function Main() {
   return (
     <main>
       <div className='row-products-filter'>
-        <Filter numOfProducts= {products.length} category= {category} rate= {rate} changeCategory= {changeCategory} sortingByRate= {sortingByRate}/>
+        <Filter numOfProducts= {2} category= {category} rate= {rate} changeCategory= {changeCategory} sortingByRate= {sortingByRate}/>
         <Products products= {products} productModal= {productModal} openModal= {openModal} closeModal= {closeModal} addToCart= {addToCart}/>
       </div>
       <div className='row-cart'>
