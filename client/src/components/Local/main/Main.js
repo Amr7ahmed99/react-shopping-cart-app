@@ -18,7 +18,7 @@ export default function Main() {
   const [cartItems, setCartItems]= useState( JSON.parse(localStorage.getItem("cartItems"))  || []);
   
   const dispatch= useDispatch();
-  const products= useSelector( (state)=> state.products);
+  const products= useSelector( (state)=> state.products) || [];
   useEffect(()=>{
     dispatch(changeProducts(category));
     // axiosInstance
@@ -76,7 +76,7 @@ export default function Main() {
   return (
     <main>
       <div className='row-products-filter'>
-        <Filter numOfProducts= {2} category= {category} rate= {rate} changeCategory= {changeCategory} sortingByRate= {sortingByRate}/>
+        <Filter numOfProducts= {products.length} category= {category} rate= {rate} changeCategory= {changeCategory} sortingByRate= {sortingByRate}/>
         <Products products= {products} productModal= {productModal} openModal= {openModal} closeModal= {closeModal} addToCart= {addToCart}/>
       </div>
       <div className='row-cart'>
