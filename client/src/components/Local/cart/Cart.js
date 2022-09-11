@@ -53,7 +53,7 @@ export default function Cart({cartItems, setCartItems}) {
                     <div>
                       <p> <b>item:</b> {item.title}</p>
                       <p> <b>Q:</b> {item.quantity}</p>
-                      <p> <b>price:</b> ${item.price}</p>
+                      <p> <b>price:</b> ${item.price * item.quantity}</p>
                     </div>
                   </div>
                   <div className='remove-item'>
@@ -73,7 +73,7 @@ export default function Cart({cartItems, setCartItems}) {
             Total: $
             {
               cartItems.reduce((acc, item)=>{
-                return acc + item.price;
+                return acc + (item.price * item.quantity);
               }, 0).toFixed(2)
             }
           </p>
@@ -83,22 +83,22 @@ export default function Cart({cartItems, setCartItems}) {
       <Checkout showForm={showForm} setShowForm= {setShowForm} onSubmitOrder= {onSubmitOrder} handelChange= {handelChange}/>
       <Modal isOpen={order} onRequestClose= {closeModal}>
             <div className='order-Info'>
-              <span className='close-Icon' onClick={closeModal}> &times; </span>
+              <span className='close-Icon' onClick={closeModal}> <b>&times;</b> </span>
               <div className='alert-success'>
                 <p>Order Done Success</p>
               </div>
               <table>
                 <tr>
-                  <td>Name:</td>
+                  <td> <b>Name:</b></td>
                   <td>{order.name}</td>
                 </tr>
                 <tr>
-                  <td>Email:</td>
+                  <td><b>Email:</b></td>
                   <td>{order.email}</td>
                 </tr>
                 <tr>
-                  <td>totla price:</td>
-                  <td>{cartItems.reduce( (a, pro)=> (a+pro.price), 0)}$</td>
+                  <td><b>Totla:</b></td>
+                  <td>{cartItems.reduce( (acc, pro)=> (acc+ (pro.price * pro.quantity)), 0)}$</td>
                 </tr>
                 <tr>
                   <td>
@@ -109,7 +109,7 @@ export default function Cart({cartItems, setCartItems}) {
                             src={pro.image}
                             alt={pro.title}
                           />
-                            <p> Title: {pro.title} <br/> Quantity: {pro.quantity}</p>
+                            <p> <b>Title: </b>{pro.title} <br/> <b>Quantity:</b> {pro.quantity}</p>
                         </div>
                          
                       );
