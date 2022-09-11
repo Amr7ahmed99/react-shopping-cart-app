@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../../../css/cart/Cart.css';
 import Checkout from '../checkout/Checkout';
 import Fade from 'react-reveal/Fade'
-export default function Cart({cartItems, removeFromCart}) {
+import { cartContext } from '../../../contexts/cartContext';
+
+export default function Cart({cartItems, setCartItems}) {
   const [showForm, setShowForm]= useState(false);
   const [values, setValues]= useState("");
+  // const [cartItems, setCartItems]= useContext(cartContext);
+  // const [cartItems, setCartItems]= useState( JSON.parse(localStorage.getItem("cartItems"))  || []);
+
   const handelChange= (e)=>{
     setValues( (oldState)=> {
       return {...oldState, [e.target.name]: e.target.value}
@@ -19,6 +24,14 @@ export default function Cart({cartItems, removeFromCart}) {
     }
     // console.log(order);
   }
+
+
+  const removeFromCart= (itemId)=>{
+    const cartItemsClone= [...cartItems];
+    setCartItems(cartItemsClone.filter( item=> (item.id !== itemId)));
+  }
+
+
   return (
     <section className='cart-wrapper'>
         <div className='cart-title'> 
