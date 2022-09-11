@@ -82,4 +82,38 @@ $danger-color: #dc3545;
         cursor: pointer;
     }
    }
+
+
+  .close-Icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  }
 }
+
+
+.cart-product{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    border-bottom: 1px solid grey;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .cart-product img {
+    max-height: 150px;
+    height: auto;
+    width: 100px;
+    /* border: 1px solid gray; */
+  }
+  
+  .cart-product p{
+    padding: 10px;
+  
+  }
+  
+  .order-Info table{
+    width: 100%;
+  }
