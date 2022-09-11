@@ -12,11 +12,4 @@ main {
 main hr {
   color: #000;
 }
-main .row-products-filter {
-  display: flex;
-  flex-direction: row;
-}
-main .row-cart {
-  display: flex;
-  justify-content: center;
-}
+

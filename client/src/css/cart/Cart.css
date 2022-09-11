@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 80%;
+  align-self: center;
 }
 .cart-wrapper .cart-title p {
   border-bottom: 1px solid #000;
