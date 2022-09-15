@@ -109,7 +109,11 @@ export default function Cart({cartItems, setCartItems}) {
                             src={pro.image}
                             alt={pro.title}
                           />
-                            <p> <b>Title: </b>{pro.title} <br/> <b>Quantity:</b> {pro.quantity}</p>
+                            <p> 
+                              <b>Title: </b>{pro.title} <br/>
+                              <b>Quantity:</b> {pro.quantity} <br/>
+                              <b>Price:</b> {pro.price * pro.quantity}$
+                            </p>
                         </div>
                          
                       );

@@ -1,6 +1,6 @@
 import { SET_PRODUCTS, FILTER_SORT, SET_CATEGORY } from "./actionNames";
 import axiosInstance from '../components/Global/axiosConfig/axiosConfig';
-export function changeProducts(category){
+export  function changeProducts(category){
     return (dispatch)=>{
         axiosInstance
         .get(`${category}`)
@@ -8,16 +8,21 @@ export function changeProducts(category){
         .catch((err)=> Promise.reject(err));
     }
 
-        // async fetch('/api/products',
-        //     {
-        //         method: "GET",
-        //         headers: {"Content-Type": "application/json"}
-        //     }
-        // )
-        // .then( res=> res.json())
-        // .then( res=> await dispatch({type: SET_PRODUCTS, payload: res.data}))
-        // .catch(err=> Promise.reject(err));
+    // return async (dispatch)=>
+    // {
+    //     await fetch('/api/products'
+    //     ,{
+    //             method: "GET",
+    //             headers: {"Content-Type": "application/json"}
+    //         }
+    //     )
+    //     .then( res=> res.json())
+    //     .then( res=> dispatch({type: SET_PRODUCTS, payload: res.data}))
+    //     .catch(err=> Promise.reject(err));
     // }
+
+        
+    
 }
 
 
