@@ -29,9 +29,7 @@ function Products() {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const openModal = (product) => {
-    setProductModal(product);
-  };
+  
 
   const closeModal = () => {
     setProductModal(false);
@@ -76,7 +74,7 @@ function Products() {
                     <img
                       src={product.image}
                       alt={product.title}
-                      onClick={() => openModal(product)}
+                      onClick={() => setProductModal(product)}
                     />
                     <div className="product-desc">
                       <p> {product.title}</p>
@@ -90,7 +88,6 @@ function Products() {
                       type="button"
                       role="button"
                     >
-                      {" "}
                       Add To Cart
                     </button>
                   </div>

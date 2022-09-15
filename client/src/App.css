@@ -1,12 +1,13 @@
 .layout{
-  display: grid;
+  /* display: grid;
   grid-template-areas: 
   "header",
   "main",
   "footer";
-  grid-template-rows: 70px 1fr 70px;
+  grid-template-rows: 70px 1fr 70px; */
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  /* text-align: center; */
 }
 
 /* @keyframes App-logo-spin {
